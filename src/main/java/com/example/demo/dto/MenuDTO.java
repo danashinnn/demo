@@ -1,7 +1,13 @@
 package com.example.demo.dto;
 
-public class MenuDTO {
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
 
+@Getter
+@AllArgsConstructor
+@NoArgsConstructor
+public class MenuDTO {
     private int menuNo;
     private String menuName;
     private String menuType;

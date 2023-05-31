@@ -18,12 +18,8 @@ public class Menu {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int menuNo;         // 메뉴 번호
-    @Column
     private String menuName;    // 메뉴 이름
-    @Column
     private String menuType;    // 메뉴 타입 (에피타이저, 메인, 사이드, 음료 등)
-    @Column
     private int menuPrice;      // 메뉴 가격
-    @Column
     private String menuDesc;    // 메뉴 설명
 }

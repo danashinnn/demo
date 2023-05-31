@@ -1,6 +1,7 @@
 package com.example.demo.controller;
 
 import com.example.demo.domain.Menu;
+import com.example.demo.dto.MenuDTO;
 import com.example.demo.service.MenuService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
@@ -18,16 +19,13 @@ public class MenuController {
     }
 
     @PostMapping("/register")
-    public int registerMenu(@RequestParam("menuName") String menuName,
-                             @RequestParam("menuType") String menuType,
-                             @RequestParam("menuPrice") int menuPrice,
-                             @RequestParam("menuDesc") String menuDesc) {
+    public int registerMenu(@RequestBody MenuDTO param) {
 
         Menu menu = Menu.builder()
-                .menuName(menuName)
-                .menuType(menuType)
-                .menuPrice(menuPrice)
-                .menuDesc(menuDesc)
+                .menuName(param.getMenuName())
+                .menuType(param.getMenuType())
+                .menuPrice(param.getMenuPrice())
+                .menuDesc(param.getMenuDesc())
                 .build();
 
         return menuService.register(menu);
