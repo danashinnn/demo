@@ -14,7 +14,7 @@ public class MenuController {
     private final MenuService menuService;
 
     @GetMapping("/get/{menuNo}")
-    public Menu getMenu(@PathVariable("menuNo") int menuNo) {
+    public MenuDTO getMenu(@PathVariable("menuNo") int menuNo) {
         return menuService.findById(menuNo);
     }
 
